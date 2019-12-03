@@ -188,6 +188,7 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/resources/tdnf-completion.bash"
 ##
 
 add_custom_target(check
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pytests/repo/setup-repo.sh
     COMMAND pytest --build-dir=${CMAKE_CURRENT_BINARY_DIR}
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pytests
     COMMENT "Running tests.."
